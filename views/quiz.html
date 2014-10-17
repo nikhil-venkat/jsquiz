@@ -1,0 +1,31 @@
+<div ng-controller="quizController" id="quiz" class="well" ng-cloak>
+        <div ng-show="formSubmitted" ng-cloak>
+            <h2>
+                You got {{size(correctAnswers)}} out of {{questionnaireList.length}} questions right.
+            </h2>
+        </div>
+        <div ng-repeat="item in questionnaireList" ng-cloak>
+            <div ng-show="($index+1)===currentQuestion||formSubmitted">
+                <h2 class="alert" ng-class="{'alert-success':correctAnswers[item.questionId]&&formSubmitted,'alert-danger':!correctAnswers[item.questionId]&&formSubmitted}" ng-bind-html="item.question">
+                    <p ng-show="correctAnswers[item.questionId]&&formSubmitted" class="label label-success">
+                        <i class="glyphicon glyphicon-ok"></i>
+                    </p>
+                    <p ng-show="!correctAnswers[item.questionId]&&formSubmitted" class="label label-danger">
+                        <i class="glyphicon glyphicon-remove"></i>
+                    </p>
+                </h2>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="option in item.options">
+                        <label class="alert" ng-class="{'alert-success':item.corectAnswer==option.id&&formSubmitted}">
+                            <input type="radio" name="option" value="{{option.id}}" ng-model="userResponse[item.questionId]"/>
+                              {{option.value}}
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div ng-hide="formSubmitted" ng-cloak>
+            <a ng-hide="currentQuestion && currentQuestion === questionnaireList.length" class="btn btn-primary" ng-cloak ng-click="next()">Continue</a>
+            <a ng-show="currentQuestion && currentQuestion === questionnaireList.length" class="btn btn-primary" ng-cloak ng-click="submitForm()">Submit</a>
+        </div>
+</div>

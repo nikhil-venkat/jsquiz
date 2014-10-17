@@ -1,0 +1,11 @@
+<div ng-controller="mainController" ng-show="!isUserLoggedIn">
+   <p class="lead">Please <a href="#/login">log in</a> or <a href="#/sign-up">sign up</a> before you start</p>
+</div>
+<div ng-show="isUserLoggedIn">
+    <h3>Wanna be a Front-end Engineer?</h3>
+    <p>
+        Prove it! Take this simple javascript quiz and share your results with us.
+    </p> 
+    <a ng-href="#/quiz">Get Started</a>
+</div>
+

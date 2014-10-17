@@ -1,0 +1,39 @@
+/* line 1, ../sass/app.scss */
+.starter-template {
+  margin-top: 100px;
+}
+
+/* line 5, ../sass/app.scss */
+ul li {
+  list-style-type: none;
+}
+
+/* line 10, ../sass/app.scss */
+.overlay {
+  background: url("../images/loading.gif") 50% 50% no-repeat black;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* line 20, ../sass/app.scss */
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+/* line 24, ../sass/app.scss */
+.form-signin .form-control {
+  margin: 5px 0px;
+}
+
+/* line 29, ../sass/app.scss */
+.notification {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  text-align: center;
+}
