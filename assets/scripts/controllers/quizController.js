@@ -6,9 +6,9 @@ angular.module('quiz.controller', [])
             $scope.formSubmitted = false;
             $rootScope.checkUserSession();
             $scope.userResponse = {};
-            // $window.onbeforeunload = function(e) {
-            //     return 'You wil lose all your responses. Are you sure you want to reload?';
-            // };
+            $window.onbeforeunload = function(e) {
+                return 'You wil lose all your responses. Are you sure you want to reload?';
+            };
             if( $rootScope.size($scope.userResponse) === 0 ) {
                 dataService.getQuestionnaireList(null,function(response){
                     if(response && response[0]){
